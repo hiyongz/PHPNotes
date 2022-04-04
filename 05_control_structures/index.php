@@ -94,6 +94,7 @@ echo "<br/>";
 for ($i = 1, $j = 0; $i <= 10; $j += $i, print $i, $i++);
 
 echo "<br/>";
+
 /* foreach */
 $arr = array(1, 2, 3, 4);
 foreach ($arr as &$value) {
