@@ -112,4 +112,26 @@ echo "strripos: " . strripos($str,'t') . "<br />\n";
 $str = 'one,two,Three';
 echo "strpbrk: " . strpbrk($str,'nt') . "<br />\n";
 
+/* filter_var */
+// 方法1
+$str = 'one,two,Three,4';
+echo "number: " . filter_var($str, FILTER_SANITIZE_NUMBER_INT) . "<br />\n";
+// 方法2
+preg_match_all('!\d+!', $str, $matches);
+echo "<pre>";
+print_r($matches);
+echo "</pre>";
+// 方法3
+$str2 = preg_replace('/[^0-9]/', '', $str);
+echo "number: " . $str2 . "<br />\n";
+
+/* htmlspecialchars_decode */
+$str = '&quot;http://www.baidu.com&quot;';
+echo htmlspecialchars_decode($str) . "<br />\n";
+
+/* htmlspecialchars */
+$str = '"http://www.baidu.com"';
+print_r(htmlspecialchars($str, ENT_QUOTES));
+
+
 ?>
