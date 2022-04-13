@@ -51,6 +51,16 @@ echo lcfirst($str) . "<br />\n";
 $str = 'one,two,three';
 echo ucwords($str,',') . "<br />\n";
 
+/* ord */
+$str = 'A';
+echo "Char: ". $str .", ASCII: " .ord($str) . "<br />\n";
+
+/* chr */
+echo "Char: ". chr(ord($str) + 1) . "<br />\n";
+
+/* sprintf */
+echo sprintf("Char: %c <br />\n", ord($str) + 2);
+
 /* parse_str */
 $str = 'one=1&two=2&arr[]=3&arr[]=4';
 parse_str($str, $output);

@@ -79,6 +79,19 @@ echo "<pre>";
 print_r($array1);
 echo "</pre>";
 
+/* array_merge */
+$array1 = ['one', 'two', 'three'];
+$array2 = ['four', 'five'];
+$array3 = array_merge($array1, $array2);
+$array1[] = 'eight';
+echo "<pre>";
+print_r($array3);
+echo "</pre>";
+
+echo "<pre>";
+print_r("9999999999999999999999999999999999");
+echo "</pre>";
+
 /* end */
 $array1 = ['one', 'two', 'three'];
 $last = end($array1);
