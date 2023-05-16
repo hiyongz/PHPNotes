@@ -187,4 +187,38 @@ echo "<pre>";
 print_r($array1);
 echo "</pre>";
 
+$fruits = array('apple', 'banana', 'orange', 'apple', 'banana');
+$counts = array_count_values($fruits);
+print_r($counts);
+
+$array2 = [
+    ['id' => 1, 'name' => 'one'],
+    ['id' => 2, 'name' => 'two'],
+    ['id' => 1, 'name' => 'one'],
+    ['id' => 2, 'name' => 'two'],
+    ['id' => 3, 'name' => 'three']
+];
+echo "<pre>";
+print_r($array2);
+echo "</pre>";
+// $count = array_count_values($array2, 'name');
+$count = array_count_values(array_column($array2, 'name'));
+echo "<pre>";
+print_r($count);
+echo "</pre>";
+
+$array = [
+    (object)['id' => 1, 'name' => 'one'],
+    (object)['id' => 2, 'name' => 'two'],
+    (object)['id' => 1, 'name' => 'one'],
+    (object)['id' => 2, 'name' => 'two'],
+    (object)['id' => 3, 'name' => 'three']
+];
+echo "<pre>";
+print_r($array);
+echo "</pre>";
+$count = array_count_values(array_column($array, 'name'));
+echo "<pre>";
+print_r($count);
+echo "</pre>";
 ?>
